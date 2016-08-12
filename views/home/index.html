@@ -1,4 +1,20 @@
 <div class="home">
 	<h1> {{ data.home }} </h1>
-	<a href="/#page1">page1</a>
+	
+	<div class="vrClass row">
+		<ul class="col l10 offset-l1">
+			<li class="row z-depth-2 valign-wrapper" ng-repeat="clase in data.clases">	
+				<div class="col l2">
+					<img class="circle responsive-img" ng-src="{{clase.img}}">
+				</div>
+				<div class="col l9">
+					<h2 class="header">{{clase.title}}</h2>
+					<p>{{clase.desc}}</p>
+				</div>
+				<div class="col l1">
+					<a ng-href="{{clase.link}}"><i class="large material-icons">play_arrow</i></a>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>

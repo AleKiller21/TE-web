@@ -6,9 +6,14 @@ app.config(function($routeProvider, $locationProvider) {
             .when('/', {
                 templateUrl : '/views/home',
                 controller  : 'homeCtrl'
-            }).when('/page1', {
-                templateUrl : '/views/page1',
-                controller  : 'page1Ctrl'
+            }).when('/class', {
+                templateUrl : '/views/class',
+                controller  : 'classCtrl'
+            }).when('/access', {
+                templateUrl : '/views/access',
+                controller  : 'accessCtrl'
+            }).when('/404', {
+                templateUrl : '/views/404'
             }).otherwise({ redirectTo: '/404' });
 
             // to remove the # in the url uncomment this

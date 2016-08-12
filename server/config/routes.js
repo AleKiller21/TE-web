@@ -96,35 +96,15 @@ var router = function(app) {
     });
   });
 
-  app.get('/:view?', function(req, res, next){
-     var options = {
-      root: app.locals.root_path + '/views/',
-      dotfiles: 'deny',
-      headers: {
-          'x-timestamp': Date.now(),
-          'x-sent': true
-      }
-    };
+  app.get('/:view', function(req, res, next){
+    var view = (!!req.params.view)?req.params.view:'/';
+    console.log(req.params.view);
+    res.redirect('/#' + view);
 
-    if(!!req.params.view)
-      view = req.params.view;
-    else
-      view='home';
-
-    console.log('seccion: ' + view);
-    res.sendFile(view + '/index.html', options, function (err) {
-      if (err) {
-        console.log(err);
-        res.status(err.status).sendFile( app.locals.root_path + '/views/404/index.html');
-      }
-      else {
-        console.log('Sent:', view);
-      }
-    });
   });
   app.get('/*',function(req, res) {
       console.log('/*');
-      res.status(404).sendFile( app.locals.root_path + '/views/404/index.html');
+      res.status(404).redirect('/#404');
     });
 };
 

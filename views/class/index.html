@@ -1,0 +1,23 @@
+<div class="page1">
+	<div class="section blue">
+		<img class="responsive-img" src="http://www.garethgingell.com/wp-content/uploads/2015/05/PANO_20141130_133705.jpg" alt="">
+	</div>
+	<div class="row valign-wrapper">
+		<div class="col l3">
+			<img ng-src="{{data.clase.img}}" class=" circle responsive-img" alt="">
+		</div>
+		<div class="col l8">
+			<h1>{{data.clase.title}}</h1>
+		</div>
+		<div class="col l1">
+			<a ng-href="{{data.clase.link}}">
+				<i class="material-icons medium">label_outline</i>
+            </a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col l8 offset-l2">
+			{{data.clase.desc}}
+		</div>
+	</div>
+</div>

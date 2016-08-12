@@ -1,0 +1,1 @@
+"use strict";app.controller("classCtrl",function($scope,$routeParams){console.log($routeParams)});
