@@ -3,7 +3,6 @@ var path = require('path');
 
     
 var router = function(app) {
-  require('./controller')(app);
 
   app.get('/assets/*',function(req, res) {
     var fileName = app.locals.root_path + req.path;
