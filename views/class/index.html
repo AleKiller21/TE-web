@@ -4,20 +4,20 @@
 	</div>
 	<div class="row valign-wrapper">
 		<div class="col l3">
-			<img ng-src="{{data.clase.img}}" class=" circle responsive-img" alt="">
+			<img ng-src="{{vm.data.class.img}}" class=" circle responsive-img" alt="">
 		</div>
 		<div class="col l8">
-			<h1>{{data.clase.title}}</h1>
+			<h1>{{vm.data.class.title}}</h1>
 		</div>
 		<div class="col l1">
-			<a ng-href="{{data.clase.link}}">
+			<a ng-href="{{vm.data.class.link}}">
 				<i class="material-icons medium">label_outline</i>
             </a>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col l8 offset-l2">
-			{{data.clase.desc}}
+			{{vm.data.class.desc}}
 		</div>
 	</div>
 </div>

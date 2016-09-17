@@ -1,18 +1,18 @@
 <div class="home">
-	<h1> {{ data.home }} </h1>
+	<h1> {{ vm.data.home }} </h1>
 	
 	<div class="vrClass row">
 		<ul class="col l10 offset-l1">
-			<li class="row z-depth-2 valign-wrapper" ng-repeat="clase in data.clases">	
+			<li class="row z-depth-2 valign-wrapper" ng-repeat="class in vm.data.classes">	
 				<div class="col l2">
-					<img class="circle responsive-img" ng-src="{{clase.img}}">
+					<img class="circle responsive-img" ng-src="{{class.img}}">
 				</div>
 				<div class="col l9">
-					<h2 class="header">{{clase.title}}</h2>
-					<p>{{clase.desc}}</p>
+					<h2 class="header">{{class.title}}</h2>
+					<p>{{class.desc}}</p>
 				</div>
 				<div class="col l1">
-					<a ng-href="{{clase.link}}"><i class="large material-icons">play_arrow</i></a>
+					<a ng-href="{{class.link}}"><i class="large material-icons">play_arrow</i></a>
 				</div>
 			</li>
 		</ul>

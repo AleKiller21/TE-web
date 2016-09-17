@@ -1,10 +1,13 @@
 "use strict";
 
-app.controller( 'homeCtrl', function( $scope, config ){
+var app = angular.module('TEapp');
+
+app.controller( 'HomeController', function($scope, config ){
+	var vm = this;
 	
-	$scope.data = {
+	vm.data = {
 		home:'Clase Virtual Presencial Online',
-		clases:[ 
+		classes:[ 
 			{
 				title: "Tecnologias Emergentes",
 				img: config.imgPath + "vr1.jpeg",
@@ -30,5 +33,5 @@ app.controller( 'homeCtrl', function( $scope, config ){
 				link: "/class?id=4"
 			}
 		]
-	}
+	};
 } );

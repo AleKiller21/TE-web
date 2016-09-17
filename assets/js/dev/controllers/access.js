@@ -1,5 +1,7 @@
 "use strict";
 
-app.controller( 'accessCtrl', function( $scope, $routeParams, config ){
-	console.log($routeParams);
+var app = angular.module('TEapp');
+
+app.controller( 'AccessController', function( $scope, $routeParams, config ){
+	var vm = this;
 } );
