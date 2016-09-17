@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'HomeController', function($scope, config, $state){
+app.controller( 'HomeController', function(config, $state){
 	var vm = this;
 	
 	vm.data = {

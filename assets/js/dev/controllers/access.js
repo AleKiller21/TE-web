@@ -2,6 +2,6 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'AccessController', function( $scope, $routeParams, config ){
+app.controller( 'AccessController', function( $scope, config ){
 	var vm = this;
 } );
