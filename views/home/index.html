@@ -12,7 +12,8 @@
 					<p>{{class.desc}}</p>
 				</div>
 				<div class="col l1">
-					<a ng-href="{{class.link}}"><i class="large material-icons">play_arrow</i></a>
+					<!-- <a ng-href="{{class.link}}"><i class="large material-icons">play_arrow</i></a> -->
+					<a ng-click="vm.goToClass($index)"><i class="large material-icons">play_arrow</i></a>
 				</div>
 			</li>
 		</ul>

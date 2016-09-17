@@ -12,7 +12,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
             })
 
             .state('class', {
-                url: '/class',
+                url: '/class/{id}',
                 templateUrl: '/views/class',
                 controller: 'ClassController as vm'
             })

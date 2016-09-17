@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'HomeController', function($scope, config ){
+app.controller( 'HomeController', function($scope, config, $state){
 	var vm = this;
 	
 	vm.data = {
@@ -11,27 +11,29 @@ app.controller( 'HomeController', function($scope, config ){
 			{
 				title: "Tecnologias Emergentes",
 				img: config.imgPath + "vr1.jpeg",
-				desc: "Creamos Tecnologias Emergentes!",
-				link: "/class?id=1"
+				desc: "Creamos Tecnologias Emergentes!"
 			},
 			{
 				title: "Tecnologias Emergentes",
 				img: config.imgPath + "vr1.jpeg",
-				desc: "Creamos Tecnologias Emergentes!",
-				link: "/class?id=2"
+				desc: "Creamos Tecnologias Emergentes!"
 			},
 			{
 				title: "Tecnologias Emergentes",
 				img: config.imgPath + "vr1.jpeg",
-				desc: "Creamos Tecnologias Emergentes!",
-				link: "/class?id=3"
+				desc: "Creamos Tecnologias Emergentes!"
 			},
 			{
 				title: "Tecnologias Emergentes",
 				img: config.imgPath + "vr1.jpeg",
-				desc: "Creamos Tecnologias Emergentes!",
-				link: "/class?id=4"
+				desc: "Creamos Tecnologias Emergentes!"
 			}
 		]
 	};
+
+	vm.goToClass = goToClass;
+
+	function goToClass(index) {
+		$state.go('class', {id: index});
+	}
 } );
