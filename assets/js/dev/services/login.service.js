@@ -6,8 +6,12 @@ app.factory('login', function($http) {
 	var url = '';
 
 	var service = {
-
+		login: login
 	};
 
-	return serivce;
+	return service;
+
+	function login() {
+
+	}
 });

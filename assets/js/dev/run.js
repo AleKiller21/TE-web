@@ -3,5 +3,5 @@
 var app = angular.module('TEapp');
 
 app.run(function($rootScope) {
-	$rootScope.sessionActive = false;
+	$rootScope.Session = window.localStorage['Session'];
 });
