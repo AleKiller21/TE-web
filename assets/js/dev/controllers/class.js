@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'ClassController', function( $scope, $stateParams, $state, config ){
+app.controller( 'ClassController', function($stateParams, $state, config ){
 	var vm = this;
 
 	vm.classId = $stateParams.id;
