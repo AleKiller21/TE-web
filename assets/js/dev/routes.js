@@ -5,8 +5,14 @@ var app = angular.module('TEapp');
 app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
         $stateProvider
-            .state('home', {
+            .state('login', {
                 url: '/',
+                templateUrl: '/views/login',
+                controller: 'LoginController as vm'
+            })
+            
+            .state('home', {
+                url: '/home',
                 templateUrl: '/views/home',
                 controller: 'HomeController as vm'
             })
