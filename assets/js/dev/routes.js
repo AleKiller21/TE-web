@@ -18,7 +18,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
             })
 
             .state('access', {
-                url: '/access',
+                url: '/access/{id}',
                 templateUrl: '/views/access',
                 controller: 'AccessController as vm'
             })
