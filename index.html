@@ -10,7 +10,7 @@
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
-		<ng-include src="'/views/inc/nav.html'"></ng-include>
+		<ng-include ng-show="sessionActive" src="'/views/inc/nav.html'"></ng-include>
 		<main class="container">
 			<ui-view></ui-view>
 		</main>
@@ -31,6 +31,7 @@
     	<script src="assets/js/dev/controllers/class.controller.js"></script>
     	<script src="assets/js/dev/controllers/access.controller.js"></script>
     	<script src="assets/js/dev/controllers/login.controller.js"></script>
+    	<script src="assets/js/dev/run.js"></script>
 
     	<!-- services -->
     	<script src="assets/js/dev/services/config.js"></script>
