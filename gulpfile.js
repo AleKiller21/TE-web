@@ -3,8 +3,9 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	sourcemaps = require('gulp-sourcemaps'),
-	sass = require('gulp-sass');
- 
+	sass = require('gulp-sass'),
+	exec = require('child_process').exec;
+
 gulp.task('js', function() {
 	gulp.src('./assets/js/dev/**/*.js')
 	    .pipe(uglify({mangle: false}))
@@ -36,5 +37,13 @@ gulp.task('watch', function() {
 	});
 });
 
+gulp.task('server', () => {
+	exec('node server.js', function(err, stdout, stderr){
+		console.log(stdout);
+		console.log(stderr);
+		cb(err);
+	});
+});
+
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'sass', 'js']);
+gulp.task('default', ['watch', 'sass', 'js', 'server']);
