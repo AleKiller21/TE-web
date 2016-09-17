@@ -9,9 +9,26 @@ app.controller('LoginController', function($rootScope, login) {
 	vm.password = '';
 	vm.login = login;
 
-	
+	logOut();
+	//$rootScope.Session = "alejandro.ferrera@unitec.edu";
 
 	function login() {
 		
+	}
+
+
+	function loginSuccess(response) {
+
+	}
+
+	function loginFail(response) {
+
+	}
+
+	function logOut() {
+		console.log('Adios');
+		window.localStorage.removeItem('Session');
+		window.localStorage.removeItem('Username');
+		$rootScope.Session = '';
 	}
 });
