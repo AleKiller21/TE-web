@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller('LoginController', function($rootScope, login) {
+app.controller('LoginController', function($rootScope, $state, login) {
 	var vm = this;
 
 	vm.user = {
@@ -15,7 +15,10 @@ app.controller('LoginController', function($rootScope, login) {
 	logOut();
 
 	function login() {
-		login.login(vm.user, loginSuccess, loginFail);
+		console.log(vm.user);
+		$rootScope.Session = 'alejandro.ferrera@unitec.edu';
+		$state.go('home');
+		//login.login(vm.user, loginSuccess, loginFail);
 	}
 
 
@@ -27,6 +30,8 @@ app.controller('LoginController', function($rootScope, login) {
 		window.localStorage['Role']
 			= $rootScope.Role
 			= response.role;
+
+		$state.go('home');
 	}
 
 	function loginFail(response) {
