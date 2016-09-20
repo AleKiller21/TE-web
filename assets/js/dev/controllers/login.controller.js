@@ -5,20 +5,28 @@ var app = angular.module('TEapp');
 app.controller('LoginController', function($rootScope, login) {
 	var vm = this;
 
-	vm.username = '';
-	vm.password = '';
+	vm.user = {
+		user: '',
+		password: ''
+	}
+
 	vm.login = login;
 
 	logOut();
-	//$rootScope.Session = "alejandro.ferrera@unitec.edu";
 
 	function login() {
-		
+		login.login(vm.user, loginSuccess, loginFail);
 	}
 
 
 	function loginSuccess(response) {
+		window.localStorage['Session'] 
+			= $rootScope.Session 
+			= response.email;
 
+		window.localStorage['Role']
+			= $rootScope.Role
+			= response.role;
 	}
 
 	function loginFail(response) {

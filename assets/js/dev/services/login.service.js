@@ -11,7 +11,9 @@ app.factory('login', function($http) {
 
 	return service;
 
-	function login() {
-
+	function login(user, success, fail) {
+		$http.post(JSON.stringify(user))
+			.then(success)
+			.catch(fail);
 	}
 });
