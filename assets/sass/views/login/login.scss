@@ -1,4 +1,69 @@
-.login{
-	background-color: #000;
-	font-size: 80px;
+.login {
+    .mdl-textfield.mdl-js-textfield {}
+    .mdl-card__supporting-text {}
+    .mdl-card.mdl-shadow--6dp {
+        margin: 0 auto;
+        width: 250px;
+    }
+    .card {
+        margin: 10rem 0 1rem 0;
+        border-radius: 0px;
+        max-width: 360px;
+    }
+    .mdl-layout__content.card.blue-grey.darken-1 {
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        background-color: #5E6FC7 !important;
+        left: 25%;
+        zoom: 1;
+    	-moz-transform: scale(1);
+    }
+    .container {}
+    .img-responsive {
+        width: 43%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .btn {
+        background-color: #e01e26;
+        margin-bottom: 20px;
+    }
+    input:not([type]),
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=time],
+    input[type=date],
+    input[type=datetime],
+    input[type=datetime-local],
+    input[type=tel],
+    input[type=number],
+    input[type=search],
+    textarea.materialize-textarea {
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        font-size: 16px;
+    }
+    ::selection {
+        background-color: #FFAAAA;
+        color: #fff;
+    }
+    ::-moz-selection {
+        background-color: #FFAAAA;
+        color: #fff;
+    }
+    ::-o-selection {
+        background-color: #FFAAAA;
+        color: #fff;
+    }
+    ::-ms-selection {
+        background-color: #FFAAAA;
+        color: #fff;
+    }
+    ::-webkit-selection {
+        background-color: #FFAAAA;
+        color: #fff;
+    }
 }
