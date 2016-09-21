@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'ClassController', function($stateParams, $state, config ){
+app.controller( 'ClassController', function($stateParams, $state, $rootScope, config ){
 	var vm = this;
 
 	vm.classId = $stateParams.id;
@@ -17,6 +17,7 @@ app.controller( 'ClassController', function($stateParams, $state, config ){
 	vm.goAccess = goAccess;
 
 	function goAccess() {
-		$state.go('access', {id: vm.classId});
+		if($rootScope.Role === 'student')
+			$state.go('access-student', {id: vm.classId});
 	}
 } );

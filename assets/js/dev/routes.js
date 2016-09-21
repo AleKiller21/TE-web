@@ -23,10 +23,10 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
                 controller: 'ClassController as vm'
             })
 
-            .state('access', {
+            .state('access-student', {
                 url: '/access/{id}',
-                templateUrl: '/views/access',
-                controller: 'AccessController as vm'
+                templateUrl: '/views/access-student',
+                controller: 'AccessStudentController as vm'
             })
 
             .state('404', {

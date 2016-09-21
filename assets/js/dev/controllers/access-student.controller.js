@@ -2,6 +2,6 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'AccessController', function(config ){
+app.controller( 'AccessStudentController', function(config ) {
 	var vm = this;
-} );
+});
