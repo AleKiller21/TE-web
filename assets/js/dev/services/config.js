@@ -6,6 +6,6 @@ app.service('config', function() {
     return {
     	title:"CVPO",
     	imgPath:"/assets/img/",
-    	server: "http://22ad799e.ngrok.io:8000/"
+    	server: "http://22ad799e.ngrok.io/"
     }
 });
