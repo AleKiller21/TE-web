@@ -16,7 +16,7 @@ app.controller('LoginController', function($rootScope, $state, login) {
 
 	function login() {
 		$rootScope.Session = 'alejandro.ferrera@unitec.edu';
-		$rootScope.Role = 'student';
+		$rootScope.Role = 'professor';
 		$state.go('home');
 		console.log('Adelante');
 		//login.login(vm.user, loginSuccess, loginFail);
