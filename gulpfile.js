@@ -1,14 +1,12 @@
 'use strict';
 
 var gulp = require('gulp'),
-	uglify = require('gulp-uglify'),
 	sourcemaps = require('gulp-sourcemaps'),
 	sass = require('gulp-sass'),
 	exec = require('child_process').exec;
 
 gulp.task('js', function() {
 	gulp.src('./assets/js/dev/**/*.js')
-	    .pipe(uglify({mangle: false}))
 	    .pipe(gulp.dest('./assets/js/prod'))
     	.on('ready', function(watcher) {
 		    console.log('js ready.')
