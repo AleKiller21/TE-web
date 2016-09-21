@@ -22,5 +22,8 @@ app.controller( 'ClassController', function($stateParams, $state, $rootScope, co
 
 		if($rootScope.Role === 'professor')
 			$state.go('access-professor', {id: vm.classId});
+
+		if($rootScope.Role === 'admin')
+			$state.go('access-admin', {id: vm.classId});
 	}
 });

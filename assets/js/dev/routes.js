@@ -35,6 +35,12 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
                 controller: 'AccessProfessorController as vm'
             })
 
+            .state('access-admin', {
+                url: '/access-admin/{id}',
+                templateUrl: '/views/access-admin',
+                controller: 'AccessAdminController as vm'
+            })
+
             .state('404', {
                 url: '/404',
                 templateUrl: '/views/404',
