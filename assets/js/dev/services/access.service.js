@@ -6,7 +6,8 @@ app.factory('access', function($http, config) {
 	var url = config.server + 'vclass/access';
 
 	var service = {
-		getClassCredentials: getClassCredentials
+		getClassCredentials: getClassCredentials,
+		postClassRequest: postClassRequest
 	};
 
 	return service;
@@ -19,5 +20,16 @@ app.factory('access', function($http, config) {
 			}
 		}).then(success)
 		  .catch(fail);
+	}
+
+	function postClassRequest(vclassId, userId, success, fail) {
+		let data = {
+			userID: userId,
+			videoID: vclassId
+		};
+
+		$http.post(url, JSON.stringify(data))
+			.then(success)
+			.catch(fail);
 	}
 });
