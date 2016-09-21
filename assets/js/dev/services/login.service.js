@@ -3,7 +3,7 @@
 var app = angular.module('TEapp');
 
 app.factory('login', function($http) {
-	var url = '';
+	var url = 'http://server:3000/user/login';
 
 	var service = {
 		login: login
@@ -12,7 +12,7 @@ app.factory('login', function($http) {
 	return service;
 
 	function login(user, success, fail) {
-		$http.post(JSON.stringify(user))
+		$http.post(url, JSON.stringify(user))
 			.then(success)
 			.catch(fail);
 	}

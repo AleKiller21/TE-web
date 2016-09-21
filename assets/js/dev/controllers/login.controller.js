@@ -6,8 +6,8 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	var vm = this;
 
 	vm.user = {
-		user: '',
-		password: ''
+		Email: '',
+		Password: ''
 	}
 
 	vm.login = login;
@@ -15,9 +15,9 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	logOut();
 
 	function login() {
-		console.log(vm.user);
 		$rootScope.Session = 'alejandro.ferrera@unitec.edu';
 		$state.go('home');
+		console.log('Adelante');
 		//login.login(vm.user, loginSuccess, loginFail);
 	}
 
@@ -35,11 +35,10 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	}
 
 	function loginFail(response) {
-
+		console.log(response);
 	}
 
 	function logOut() {
-		console.log('Adios');
 		window.localStorage.removeItem('Session');
 		window.localStorage.removeItem('Username');
 		$rootScope.Session = '';
