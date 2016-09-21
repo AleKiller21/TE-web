@@ -2,7 +2,7 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'HomeController', function(config, $state){
+app.controller( 'HomeController', function(config, $state, classes){
 	var vm = this;
 	
 	vm.data = {
@@ -31,9 +31,26 @@ app.controller( 'HomeController', function(config, $state){
 		]
 	};
 
+	//getClasses();
+
 	vm.goToClass = goToClass;
 
 	function goToClass(index) {
 		$state.go('class', {id: index});
 	}
+
+	function getClasses() {
+		classes.getClasses(getClassesSuccess, getClassesFail);
+	}
+
+	function getClassesSuccess(response) {
+		for(let vclass in response.data) {
+			vm.data.classes.push(response.data[vclass]);
+		}
+	}
+
+	function getClassesFail(response) {
+		console.log(response.data[0]);
+	}
+
 } );

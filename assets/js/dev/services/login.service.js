@@ -2,8 +2,8 @@
 
 var app = angular.module('TEapp');
 
-app.factory('login', function($http) {
-	var url = 'http://server:3000/user/login';
+app.factory('login', function($http, config) {
+	var url = config.url + 'user/login';
 
 	var service = {
 		login: login
