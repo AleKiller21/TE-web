@@ -42,5 +42,6 @@ app.controller('LoginController', function($rootScope, $state, login) {
 		window.localStorage.removeItem('Session');
 		window.localStorage.removeItem('Username');
 		$rootScope.Session = '';
+		$rootScope.Role = '';
 	}
 });
