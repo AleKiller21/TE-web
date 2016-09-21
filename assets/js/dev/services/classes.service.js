@@ -3,7 +3,7 @@
 var app = angular.module('TEapp');
 
 app.factory('classes', function($http, config) {
-	var url = config.url + 'vclass';
+	var url = config.server + 'vclass';
 
 	var service = {
 		getClasses: getClasses,
