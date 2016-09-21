@@ -26,11 +26,15 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	function loginSuccess(response) {
 		window.localStorage['Session'] 
 			= $rootScope.Session 
-			= response.email;
+			= response.data[0].email;
 
 		window.localStorage['Role']
 			= $rootScope.Role
-			= response.role;
+			= response.data[0].role;
+
+		window.localStorage['UserId']
+			= $rootScope.UserId
+			= response.data[0]._id;
 
 		$state.go('home');
 	}

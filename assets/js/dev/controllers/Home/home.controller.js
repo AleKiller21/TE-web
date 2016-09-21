@@ -31,16 +31,13 @@ app.controller( 'HomeController', function(config, $state, classes){
 		]
 	};
 
-	//getClasses();
+	//classes.getClasses(getClassesSuccess, getClassesFail);;
 
 	vm.goToClass = goToClass;
 
 	function goToClass(index) {
-		$state.go('class', {id: index});
-	}
-
-	function getClasses() {
-		classes.getClasses(getClassesSuccess, getClassesFail);
+		$state.go('class', {classId: index});
+		//$state.go('class', {classId: vm.data.classes[index]._id});
 	}
 
 	function getClassesSuccess(response) {

@@ -6,12 +6,18 @@ app.factory('classes', function($http, config) {
 	var url = config.url + 'vclass';
 
 	var service = {
-		getClasses: getClasses
+		getClasses: getClasses,
+		getClass: getClass
 	};
 
 	return service;
 
 	function getClasses(success, fail) {
 		$http.get(url).then(success).catch(fail);
+	}
+
+	function getClass(classId, success, fail) {
+		$http.get(url + '/' + classId).then(success)
+		  .catch(fail);
 	}
 });

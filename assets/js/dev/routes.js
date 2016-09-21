@@ -18,25 +18,25 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
             })
 
             .state('class', {
-                url: '/class/{id}',
+                url: '/class/{classId}',
                 templateUrl: '/views/class',
                 controller: 'ClassController as vm'
             })
 
             .state('access-student', {
-                url: '/access/{id}',
+                url: '/access/{classId}',
                 templateUrl: '/views/access-student',
                 controller: 'AccessStudentController as vm'
             })
 
             .state('access-professor', {
-                url: '/access-professor/{id}',
+                url: '/access-professor/{classId}',
                 templateUrl: '/views/access-professor',
                 controller: 'AccessProfessorController as vm'
             })
 
             .state('access-admin', {
-                url: '/access-admin/{id}',
+                url: '/access-admin/{classId}',
                 templateUrl: '/views/access-admin',
                 controller: 'AccessAdminController as vm'
             })

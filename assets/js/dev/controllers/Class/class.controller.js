@@ -2,10 +2,10 @@
 
 var app = angular.module('TEapp');
 
-app.controller( 'ClassController', function($stateParams, $state, $rootScope, config ) {
+app.controller( 'ClassController', function($stateParams, $state, $rootScope, config, classes) {
 	var vm = this;
 
-	vm.classId = $stateParams.id;
+	vm.classId = $stateParams.classId;
 	vm.data = {
 		class: {
 				title: "Tecnologias Emergentes",
@@ -16,14 +16,24 @@ app.controller( 'ClassController', function($stateParams, $state, $rootScope, co
 
 	vm.goAccess = goAccess;
 
+	//classes.getClass(vm.classId, getClasSuccess, getClassFail);
+
 	function goAccess() {
 		if($rootScope.Role === 'student')
-			$state.go('access-student', {id: vm.classId});
+			$state.go('access-student', {classId: vm.classId});
 
 		if($rootScope.Role === 'professor')
-			$state.go('access-professor', {id: vm.classId});
+			$state.go('access-professor', {classId: vm.classId});
 
 		if($rootScope.Role === 'admin')
-			$state.go('access-admin', {id: vm.classId});
+			$state.go('access-admin', {classId: vm.classId});
+	}
+
+	function getClassSuccess(response) {
+		vm.data.class = response.data;
+	}
+
+	function getClassFail(response) {
+		console.log(response.data[0]);
 	}
 });
