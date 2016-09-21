@@ -16,6 +16,6 @@ app.controller( 'AccessStudentController', function(config, access, $stateParams
 	}
 
 	function getCredentialsFail(response) {
-		console.log(response.data);
+		console.log(response);
 	}
 });
