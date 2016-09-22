@@ -8,9 +8,8 @@ app.controller( 'AccessStudentController', function(config, access, $stateParams
 	vm.credentials = {};
 	vm.classId = $stateParams.classId;
 	vm.postCredentialsRequest = postCredentialsRequest;
-
-	// access.getClassCredentials(vm.classId, $rootScope.userId,
-	// 	getCredentialsSuccess, getCredentialsFail);
+	access.getClassCredentials(vm.classId, $rootScope.userId,
+	getCredentialsSuccess, getCredentialsFail);
 
 	function postCredentialsRequest() {
 		access.postClassRequest(vm.classId, $rootScope.userId,
