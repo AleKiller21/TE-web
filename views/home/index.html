@@ -1,15 +1,15 @@
 <div class="home">
-	<h1> {{ vm.data.home }} </h1>
+	<h1> Clase Virtual Presencial Online </h1>
 	
 	<div class="vrClass row">
 		<ul class="col l10 offset-l1">
 			<li class="row z-depth-2 valign-wrapper" ng-repeat="class in vm.data.classes">	
 				<div class="col l2">
-					<img class="circle responsive-img" ng-src="{{class.img}}">
+					<img class="circle responsive-img" ng-src="{{class.previewImg}}">
 				</div>
 				<div class="col l9">
-					<h2 class="header">{{class.title}}</h2>
-					<p>{{class.desc}}</p>
+					<h2 class="header">{{class.name}}</h2>
+					<p>{{class.previewDescription}}</p>
 				</div>
 				<div class="col l1">
 					<a href="" ng-click="vm.goToClass($index)"><i class="large material-icons">play_arrow</i></a>

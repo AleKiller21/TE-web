@@ -2,12 +2,12 @@
 
 var app = angular.module('TEapp');
 
-app.controller('LoginController', function($rootScope, $state, login) {
+app.controller('LoginController', function($rootScope, $state, loginService) {
 	var vm = this;
 
 	vm.user = {
-		Email: '',
-		Password: ''
+		email: '',
+		password: ''
 	}
 
 	vm.login = login;
@@ -15,27 +15,22 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	logOut();
 
 	function login() {
-		$rootScope.Session = 'alejandro.ferrera@unitec.edu';
-		$rootScope.Role = 'student';
-		$rootScope.UserId = 0;
-		$state.go('home');
-		console.log('Adelante');
-		//login.login(vm.user, loginSuccess, loginFail);
+		loginService.login(vm.user, loginSuccess, loginFail);
 	}
 
 
 	function loginSuccess(response) {
 		window.localStorage['Session'] 
 			= $rootScope.Session 
-			= response.data[0].email;
+			= response.data.email;
 
 		window.localStorage['Role']
 			= $rootScope.Role
-			= response.data[0].role;
+			= response.data.role;
 
 		window.localStorage['UserId']
 			= $rootScope.UserId
-			= response.data[0]._id;
+			= response.data._id;
 
 		$state.go('home');
 	}
@@ -45,9 +40,12 @@ app.controller('LoginController', function($rootScope, $state, login) {
 	}
 
 	function logOut() {
+		console.log('Adios');
 		window.localStorage.removeItem('Session');
 		window.localStorage.removeItem('Username');
+		window.localStorage.removeItem('UserId');
 		$rootScope.Session = '';
 		$rootScope.Role = '';
+		$rootScope.UserId = 0;
 	}
 });

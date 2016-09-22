@@ -4,10 +4,10 @@
 	</div>
 	<div class="row valign-wrapper">
 		<div class="col l3">
-			<img ng-src="{{vm.data.class.img}}" class=" circle responsive-img" alt="">
+			<img ng-src="{{vm.class.CoverImg}}" class=" circle responsive-img" alt="">
 		</div>
 		<div class="col l8">
-			<h1>{{vm.data.class.title}}</h1>
+			<h1>{{vm.class.name}}</h1>
 		</div>
 		<div class="col l1">
 			<a ng-click="vm.goAccess()" href="">
@@ -17,7 +17,7 @@
 	</div>
 	<div class="row">
 		<div class="col l8 offset-l2">
-			{{vm.data.class.desc}}
+			{{vm.class.description}}
 		</div>
 	</div>
 </div>

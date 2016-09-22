@@ -8,10 +8,10 @@
 		  	<div class="mdl-card__supporting-text">
 					<form action="#" name="loginForm" ng-submit="loginForm.$valid && vm.login()">
 						<div class="mdl-textfield mdl-js-textfield">
-							<input ng-model="vm.user.Email" ng-patern="/^[A-Za-z\d]+(_|\.|\-)?[A-Za-z\d]+@unitec\.edu$/" class="mdl-textfield__input" placeholder="Email" type="email" id="email" required/>
+							<input ng-model="vm.user.email" ng-patern="/^[A-Za-z\d]+(_|\.|\-)?[A-Za-z\d]+@unitec\.edu$/" class="mdl-textfield__input" placeholder="Email" type="email" id="email" required/>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield">
-							<input ng-model="vm.user.Password" class="mdl-textfield__input" placeholder="Contrase&ntilde;a" type="password" id="userpass" required/>
+							<input ng-model="vm.user.password" class="mdl-textfield__input" placeholder="Contrase&ntilde;a" type="password" id="userpass" required/>
 						</div>
 						<div class="mdl-card__actions mdl-card--border">
 							<button type="button" ng-click="vm.login()" class="btn waves-effect waves-light">Entrar </button>
