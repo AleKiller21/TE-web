@@ -12,7 +12,6 @@ app.controller( 'ClassController', function($stateParams, $state, $rootScope, co
 	vm.goAccess = goAccess;
 
 	function goAccess() {
-		console.log($rootScope.Role);
 		if($rootScope.Role === 1)
 			$state.go('access-student', {classId: vm.class._id});
 
@@ -24,7 +23,6 @@ app.controller( 'ClassController', function($stateParams, $state, $rootScope, co
 	}
 
 	function getClassSuccess(response) {
-		console.log(response);
 		vm.class = response.data.data;
 	}
 

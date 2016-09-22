@@ -8,6 +8,7 @@ app.controller( 'AccessStudentController', function(config, access, $stateParams
 	vm.credentials = {};
 	vm.classId = $stateParams.classId;
 	vm.postCredentialsRequest = postCredentialsRequest;
+	console.log('Entro');
 
 	access.getClassCredentials(vm.classId, $rootScope.userId,
 		getCredentialsSuccess, getCredentialsFail);
@@ -18,6 +19,7 @@ app.controller( 'AccessStudentController', function(config, access, $stateParams
 	} 
 
 	function getCredentialsSuccess(response) {
+		console.log(response);
 		vm.credentials = response.data.data;
 	}
 
